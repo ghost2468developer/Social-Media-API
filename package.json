@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon src/index.ts",
-    "start": "ts-node src/index.ts"
+    "dev": "concurrently \"npm run server\" \"npm run prisma-studio\"",
+    "server": "ts-node-dev src/index.ts",
+    "prisma-studio": "prisma studio"
   },
   "repository": {
     "type": "git",
@@ -21,10 +22,15 @@
   "homepage": "https://github.com/ghost2468developer/Social-Media-API#readme",
   "dependencies": {
     "@prisma/client": "^7.4.2",
+    "bcrypt": "^6.0.0",
     "bcryptjs": "^3.0.3",
     "cors": "^2.8.6",
+    "dotenv": "^17.3.1",
     "express": "^5.2.1",
     "jsonwebtoken": "^9.0.3",
     "prisma": "^7.4.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
   }
 }
