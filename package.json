@@ -4,8 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "concurrently \"npm run server\" \"npm run prisma-studio\"",
-    "server": "ts-node-dev src/index.ts",
+    "dev": "concurrently \"node src/index.js\" \"npm run prisma-studio\"",
     "prisma-studio": "prisma studio"
   },
   "repository": {
